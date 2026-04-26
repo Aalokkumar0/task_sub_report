@@ -1,1 +1,289 @@
+----------------------------  step 1   -----------------------------
 
+Functions (Parameters & Return Types)
+What is a Function?  :->>>   A function is a block of reusable code.
+
+Types of Functions
+Simple Function
+void greet() {
+  print("Hello");
+}
+No input, no return
+Function with Parameters
+void greetUser(String name) {
+  print("Hello $name");
+}
+
+Input: name
+
+✔️ Function with Return Value
+int add(int a, int b) {
+  return a + b;
+}
+
+Output: int
+
+✔️ Arrow Function (Short)
+int square(int n) => n * n;
+✔️ Optional Parameters
+void show(String name, {int age = 18}) {
+  print("$name is $age");
+}
+✔️ Required Named Parameters
+void login({required String email, required String password}) {
+  print(email);
+}
+
+// Lists, Sets, and Maps
+ List (Ordered, Allows Duplicates)
+List<String> fruits = ["Apple", "Banana"];
+
+fruits.add("Mango");
+print(fruits[0]); // Apple
+ Set (No Duplicate Values)
+Set<int> numbers = {1, 2, 2, 3};
+print(numbers); // {1,2,3}
+ Map (Key → Value)
+Map<String, String> user = {
+  "name": "Aalok",
+  "city": "Bangalore"
+};
+
+print(user["name"]);
+ Common Operations
+fruits.remove("Apple");
+fruits.length;
+
+user["age"] = "22";
+user.remove("city");
+
+
+When to use List vs Set vs Map
+How to store and access data
+ String Manipulation
+ Basic Methods
+String text = "Hello World";
+
+print(text.length);
+print(text.toUpperCase());
+print(text.toLowerCase());
+Replace & Split
+String msg = "Hi Dart";
+
+print(msg.replaceAll("Dart", "Flutter"));
+
+var parts = msg.split(" ");
+ Interpolation
+String name = "Aalok";
+print("Hello $name");
+Trim & Contains
+String data = "  hello  ";
+
+print(data.trim());
+print(data.contains("he"));
+
+How to clean and format text
+How to extract data from strings
+Basic Object-Oriented Programming (OOP)
+Class & Object
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  void display() {
+    print("$name is $age years old");
+  }
+}
+
+void main() {
+  var p = Person("Aalok", 22);
+  p.display();
+}
+Encapsulation
+class Bank {
+  double _balance = 0;
+
+  void deposit(double amount) {
+    _balance += amount;
+  }
+
+  double get balance => _balance;
+}
+Inheritance
+class Animal {
+  void sound() {
+    print("Animal sound");
+  }
+}
+
+class Dog extends Animal {}
+Polymorphism
+class Animal {
+  void sound() {
+    print("Animal sound");
+  }
+}
+
+class Cat extends Animal {
+  @override
+  void sound() {
+    print("Cat meows");
+  }
+}
+Abstraction
+abstract class Shape {
+  void draw();
+}
+
+class Circle extends Shape {
+  @override
+  void draw() {
+    print("Drawing Circle");
+  }
+}
+
+
+What is a class & object
+How inheritance works
+Why abstraction is useful
+
+
+PRACTICE 
+
+void main() {
+  // Function
+  print(add(2, 3));
+
+  // List
+  List<int> nums = [1, 2, 3];
+  nums.add(4);
+  print(nums);
+
+  // Map
+  Map<String, String> user = {"name": "Aalok"};
+  print(user);
+
+  // String
+  print("hello".toUpperCase());
+
+  // Object
+  Person p = Person("Aalok", 22);
+  p.display();
+}
+
+int add(int a, int b) => a + b;
+
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  void display() {
+    print("$name is $age");
+  }
+}
+
+----------------------------  step 2   -----------------------------
+
+Program 1: User-defined Function
+double calculateInterest(double principal, double rate, double time) {
+  return (principal * rate * time) / 100;
+}
+
+void main() {
+  double result = calculateInterest(1000, 5, 2);
+  print(result);
+}
+Program 2: List Operations
+void main() {
+  List<String> students = ["Aalok", "Rahul", "Priya"];
+
+  students.add("Kiran");
+  students.remove("Rahul");
+
+  for (var s in students) {
+    print(s);
+  }
+}
+Program 3: Map Operations
+void main() {
+  Map<String, int> marks = {
+    "Math": 90,
+    "Science": 85
+  };
+
+  marks["English"] = 88;
+  marks["Math"] = 95;
+
+  marks.forEach((key, value) {
+    print("$key: $value");
+  });
+}
+Program 4: Class and Object
+class Student {
+  String name;
+  int marks;
+
+  Student(this.name, this.marks);
+
+  void display() {
+    print("Name: $name, Marks: $marks");
+  }
+}
+
+void main() {
+  Student s1 = Student("Aalok", 90);
+  Student s2 = Student("Rahul", 80);
+
+  s1.display();
+  s2.display();
+}
+Program 5: Mini Project
+class Student {
+  String name;
+  int marks;
+
+  Student(this.name, this.marks);
+
+  void display() {
+    print("Name: $name | Marks: $marks");
+  }
+}
+
+void main() {
+  List<Student> students = [];
+
+  students.add(Student("Aalok", 90));
+  students.add(Student("Priya", 85));
+
+  for (var s in students) {
+    s.display();
+  }
+
+  Student topper = students[0];
+
+  for (var s in students) {
+    if (s.marks > topper.marks) {
+      topper = s;
+    }
+  }
+
+  print(topper.name);
+}
+
+---------------------------Step 3-----------------------
+
+Run Programs
+dart run filename.dart
+---------------------------Step 4-----------------------
+
+Clean and Structure Code
+dart format .
+--------------------------Step 5------------------------
+Example
+double calculateInterest(double principal, double rate, double time) {
+  return (principal * rate * time) / 100;
+}
